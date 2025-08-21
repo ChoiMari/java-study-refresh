@@ -42,7 +42,6 @@ public class Ex_Rock_Paper_Scissors {
 					} else {
 						System.out.println("[Player] 가위, [Computer]  보");
 						System.out.println("결과 : 당신은 이겼습니다!!");
-						sc.close();
 						control = false;
 					}
 					break;
@@ -50,7 +49,6 @@ public class Ex_Rock_Paper_Scissors {
 					if(computer == 1) {
 						System.out.println("[Player] 바위, [Computer]  가위");
 						System.out.println("결과 : 당신은 이겼습니다!!");
-						sc.close();
 						control = false;
 					} else if(computer == 2) {
 						System.out.println("[Player] 바위, [Computer]  바위");
@@ -67,7 +65,6 @@ public class Ex_Rock_Paper_Scissors {
 					} else if(computer == 2) {
 						System.out.println("[Player] 보, [Computer]  바위");
 						System.out.println("결과 : 당신은 이겼습니다!!");
-						sc.close();
 						control = false;
 					} else {
 						System.out.println("[Player] 보, [Computer]  보");
@@ -79,6 +76,8 @@ public class Ex_Rock_Paper_Scissors {
 			}
 			System.out.println("--------------------------------\n");
 		}
+		
+		sc.close();
 		
 	} //메인끝
 
