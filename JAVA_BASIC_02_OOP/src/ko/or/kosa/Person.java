@@ -22,4 +22,17 @@ public class Person {
 	public void personPrint() {
 		System.out.printf("이름은 %s, 나이는 %d, 파워는 %s 입니다.\n", name, age, power);
 	}
+	
+	/*
+	 1. instance variable 초기화 하지 않아도 된다.
+	 		이유 : 객체 생성 할 때 기본생성자로 호출 시 기본값으로 초기화 됨
+	 	
+	 2.	instance variable 초기화 해도 될까요?
+	 		Yes, 값이 고정되어 있을 때
+	 	public int age = 1;  // 기본값 설정(-> 근데 보통 final로 상수로 만듬)
+	 
+	 3. Today Point : 왜 초기화를 잘 하지 않을까?
+	 		생성되는 객체마다 (사람마다) 데이터가 다르니까라고
+	 		설계자가 생각한 것.
+	 */
 }
