@@ -81,5 +81,43 @@ public class Fclass {
 	// 여기까지 가장 기본적인 메서드 4가지
 	
 	//확장
+	public int sum(int i, int j, int k) { 
+		// return type & parameterd 있는 메서드 
+		return i + j + k;
+	}
 	
-}
+	private int subSum(int i) { // private 객체에서 접근 불가(클래스 내부)
+		return i + 100; // 쓸때 없이 외부 노출해서 쓸까봐 private로 감춤(내부용도라)
+	}
+	
+	public void callSubSum() {
+		int result = subSum(100);
+		System.out.println("call result : " + result);
+	}
+	
+	public int opSum(int data) {
+		int result = subSum(data);
+		
+		if(result > 0) {
+			return 1;
+		}else {
+			return -1;
+		}
+	}
+	
+	/*
+	 	메서드를 생성하는데
+	 	정수타입의 parameter 2개를 받아서 둘중에 큰값을 리턴하는 함수를 만드세요
+	 	
+	 * */
+	public int max(int num1, int num2) {
+//		if(num1 > num2) {
+//			return num1;
+//		} else {
+//			return num2;
+//		}
+		return (num1 > num2) ? num1 : num2;
+	}
+	
+	
+}// 클래스 끝

@@ -12,7 +12,15 @@ public class Ex02_Method_Call {
 		
 		result = fc.m4(10);
 		System.out.println("result value : " + result);
-
+		
+		result = fc.sum(10, 20, 30);
+		System.out.println("result value : " + result);
+		
+		fc.callSubSum();
+		
+		result = fc.opSum(-500);
+		System.out.println("result valur : " + result);
+		
 	}
 
 }
