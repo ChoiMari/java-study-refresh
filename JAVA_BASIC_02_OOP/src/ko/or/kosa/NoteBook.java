@@ -7,7 +7,9 @@ package ko.or.kosa;
 public class NoteBook {
 	private String color;
 	private int yearProduction;
-	private Mouse mouse = new Mouse();
+	
+	//노트북 필요에 따라서 가질 수 있다
+	// 기능이 동작 될 때 마우스 가질 수 있음
 	
 	//getter & setter
 	public String getColor() {
@@ -28,7 +30,10 @@ public class NoteBook {
 		} else {
 			this.yearProduction = yearProduction;
 		}
-		
+	}
+	
+	public void handleMouse(Mouse mouse) {
+		mouse.setX(10);
 	}
 	
 	
