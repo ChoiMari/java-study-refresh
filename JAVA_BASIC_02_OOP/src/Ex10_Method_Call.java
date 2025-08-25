@@ -47,5 +47,10 @@ public class Ex10_Method_Call {
 		vcall(d.i); //1111을 보냄
 		System.out.println("d.i : " + d.i); // 1111
 		// 값을 보냈으므로 원본 변경 없음
+		
+		//-> 값을 전달, 주소값 전달의 차이
+		// call by value, call by reference
+		// 원칙 : 모든 함수의 실행은 stack 메모리
+		
 	}
 }
