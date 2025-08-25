@@ -27,24 +27,19 @@ public class AirPlane {
 	private String airName; // 비행기 이름
 	private static int airCount; // 누적 대수
 	
-	public void print() {
-		System.out.println("비행기 이름 : " + airName + ", 비행기 번호 : " + airNum);
-	}
-	
-//	public AirPlane() {
-//		count++;
-//	}
-	
 	public AirPlane(int airNum, String airName) {
 		this.airNum = airNum;
 		this.airName = airName;
 		airCount++;
 	}
 	
+	public void print() {
+		System.out.printf("[비행기 이름] : %s, [비행기 번호] : %d\n", airName, airNum);
+	}
+	
 	public void airCount() {
 		System.out.println("총 비행기 누적대수 : " + airCount);
 	}
-	
 	
 	//getter & setter
 	public int getAirNum() {
