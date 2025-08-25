@@ -20,52 +20,51 @@ package ko.or.kosa;
  총 비행기 누적대수 : 5대 생산
  비행기 대수 -> new 하면 비행기 1대씩 추가 생산
  
-TODO : 추후 개선
  * */
 public class AirPlane {
-	private String name; // 비행기 이름
-	private int num; // 비행기 번호
-	private static int count; // 누적 대수
+	
+	private int airNum; // 비행기 번호
+	private String airName; // 비행기 이름
+	private static int airCount; // 누적 대수
 	
 	public void print() {
-		System.out.println("비행기 이름 : " + name + ", 비행기 번호 : " + num);
+		System.out.println("비행기 이름 : " + airName + ", 비행기 번호 : " + airNum);
 	}
 	
 //	public AirPlane() {
 //		count++;
 //	}
 	
-	public void makeAirPlane(int airNum, String airName) {
-		num = airNum;
-		name = airName;
-		count++;
-		print();
+	public AirPlane(int airNum, String airName) {
+		this.airNum = airNum;
+		this.airName = airName;
+		airCount++;
 	}
 	
 	public void airCount() {
-		System.out.println("총 비행기 누적대수 : " + count);
+		System.out.println("총 비행기 누적대수 : " + airCount);
 	}
 	
 	
 	//getter & setter
-	public String getName() {
-		return name;
+	public int getAirNum() {
+		return airNum;
 	}
 	
-	public void setName(String airName) {
-		name = airName;
+	public void setAirNum(int airNum) {
+		this.airNum= airNum;
 	}
 	
-	public int getNum() {
-		return num;
+	public String getAirName() {
+		return airName;
 	}
 	
-	public void setNum(int airNum) {
-		num = airNum;
+	public void setAirName(String airName) {
+		this.airName = airName;
 	}
 	
-	public int getCount() {
-		return count;
+	public int getAirCount() {
+		return airCount;
 	}
 	
 }
