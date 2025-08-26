@@ -100,6 +100,29 @@ class Car5{
 	// 컴파일러는 기본 생성자를 자동으로 구현하지 않는다.
 }
 
+class Car8 { // 개발자의 설계 의도
+	String carcolor;
+	int door;
+	
+	// 생성자 오버로딩 - 옵션
+	public Car8() { // 디폴트 값 줌 
+		carcolor="blue";
+		door=4;
+	}
+	public Car8(int num) { 
+		carcolor = "blue";
+		door = num;
+	}
+	public Car8(String color) {
+		carcolor = color;
+		door = 4;
+	}
+	public Car8(int num , String color) {
+		carcolor=color;
+		door = num;
+	}
+}
+
 public class Ex12_Constuctor {
 	public static void main(String[] args) {
 		Car car = new Car();
