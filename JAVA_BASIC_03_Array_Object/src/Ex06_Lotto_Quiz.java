@@ -42,6 +42,22 @@ public class Ex06_Lotto_Quiz {
 		}
 		return numbers; 
 	}
+	
+	// 3. 배열에 있는 6개의 값은 낮은 순으로 정렬 시키세요(정렬 : 자리바꿈 : swap)
+	static public int[] bubbleSort(int[] numbers) {
+		int temp; // 읽히기 전에 대입(초기화)되는 경로 보장되어 있기 때문에 컴파일 에러 안남
+		for(int i = 0 ;i < numbers.length;i++) {
+			for(int j = 0;j < (numbers.length - 1) - i;j++) { 
+				if(numbers[j] > numbers[j + 1]) { // 앞에 숫자가 더 크면 실행
+					temp = numbers[j];
+					numbers[j] = numbers[j + 1];
+					numbers[j + 1] = temp; 
+					//-> 값을 바꿔서 위치 변경(큰 숫자를 뒤로 보냄)
+				}
+			}
+		}
+		return numbers;
+	}
 
 	static public void arrayPrint(int[] arr) { // 확인용 출력 메서드
 		for(int i : arr) {
@@ -51,9 +67,16 @@ public class Ex06_Lotto_Quiz {
 	}
 	
 	public static void main(String[] args) {
+		
 		int[] LottoNums = createLotto(randomArr(6, 45));
+		// 결과 출력
 		System.out.print("로또 번호 : ");
 		arrayPrint(LottoNums);
+		
+		int[] ascSortArr = bubbleSort(LottoNums);
+		// 결과 출력
+		System.out.print("버블 정렬 : ");
+		arrayPrint(ascSortArr);
 
 	}
 }
