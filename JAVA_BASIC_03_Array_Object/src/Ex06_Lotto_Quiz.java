@@ -35,7 +35,9 @@ public class Ex06_Lotto_Quiz {
 				if(i < j) { // 불필요 검사 제거
 					if(numbers[i] == numbers[j]) { // 중복인 경우
 						numbers[j] = (int)(Math.random() * 45) + 1; // 새로 저장
-						numbers = createLotto(numbers); // 다시 검사
+						//numbers = createLotto(numbers); // 다시 검사
+						i--;
+						break;
 					} 
 				}
 			}
