@@ -10,7 +10,8 @@ public class Ex_Practice {
 		HamburgerStore hamburgerStore = new HamburgerStore(); // 햄버거 가게 만듬
 		
 		Hamburger hamburger = new Hamburger(); // 기본햄버거
-		Hamburger chickenBurger = new ChickenBurger(); // 다형성
+		// ***다형성***
+		Hamburger chickenBurger = new ChickenBurger(); 
 		Hamburger bulgogiBurger = new BulgogiBurger();
 		Hamburger mintChocolateBananaBurger = new MintChocolateBananaBurger();
 		Hamburger mintChocolateBananaBurger2 = new MintChocolateBananaBurger();
@@ -30,8 +31,8 @@ public class Ex_Practice {
 		hamburgerStore.sell("햄버거");
 		hamburgerStore.sell("민트초코바나나버거");
 		hamburgerStore.sell("민트초코바나나버거");
-		hamburgerStore.sell("민트초코바나나버거");
-		
+		hamburgerStore.makeHambugerAndStorage(hamburger);
+
 		// 매출확인
 		hamburgerStore.printMoney();
 		

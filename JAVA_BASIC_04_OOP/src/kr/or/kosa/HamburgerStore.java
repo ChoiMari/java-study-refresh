@@ -26,7 +26,7 @@ public class HamburgerStore { // 햄버거 가게
 	
 	// 햄버거 팔기
 	public void sell(String hambugerName) {
-		if(refIndex < 0) {
+		if(refIndex <= 0) {
 			System.out.println("[매진] 저장된 햄버거가 없습니다. 새로 만들어야 합니다.");
 			return;
 		}
@@ -42,7 +42,7 @@ public class HamburgerStore { // 햄버거 가게
 				} 
 			} 
 			if(i == refrigerator.length -1 && refrigerator[i] == null) { //마지막까지 돌았는데 없는경우 실행
-				System.out.println("주문하신 햄버거 없습니다. 다음에 다시 이용해주세요\n");
+				System.out.println("주문하신 햄버거가 없거나 소진되었습니다. 다음에 다시 이용해주세요\n");
 			}
 		}//for문 끝
 	}

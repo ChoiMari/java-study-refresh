@@ -17,11 +17,12 @@ public class BulgogiBurger extends Hamburger {
 		String[] ingredients = getIngredients();
 		String[] sauces = getSauces();
 		
-		bulgogiBurger += Hamburger.BREADS[0];
+		bulgogiBurger += Hamburger.BREADS[0] + " + ";
 		for(int j = 0;j < ingredients.length;j++) { // 재료 넣기
 			if(ingredients[j] == null) break;
 			
-			bulgogiBurger += ingredients[j] + " + "; 
+			bulgogiBurger += (ingredients[j].equals("패티")) ? 
+					ingredients[j] + "(구움) + " :  ingredients[j] + " + ";
 			
 		}
 		for(int k =0;k < sauces.length;k++) { //소스 넣기

@@ -16,11 +16,12 @@ public class ChickenBurger extends Hamburger {
 		String chickenBurger = "";
 		String[] ingredients = getIngredients();
 		String[] sauces = getSauces();
-		chickenBurger += Hamburger.BREADS[0];
+		chickenBurger += Hamburger.BREADS[0] + " + ";
 		for(int j = 0;j < ingredients.length;j++) { // 재료 넣기
 			if(ingredients[j] == null) break;
 			
-			chickenBurger += ingredients[j] + " + "; 
+			chickenBurger += (ingredients[j].equals("치킨")) ? 
+					ingredients[j] + "(구움) + " :  ingredients[j] + " + ";
 			
 		}
 		for(int k =0;k < sauces.length;k++) { //소스 넣기

@@ -16,11 +16,12 @@ public class MintChocolateBananaBurger extends Hamburger {
 		String mintChocoBananaBurger = "";
 		String[] ingredients = getIngredients();
 		String[] sauces = getSauces();
-		mintChocoBananaBurger += Hamburger.BREADS[0];
+		mintChocoBananaBurger += Hamburger.BREADS[0] + " + ";
 		for(int j = 0;j < ingredients.length;j++) { // 재료 넣기
 			if(ingredients[j] == null) break;
 			
-			mintChocoBananaBurger += ingredients[j] + " + "; 
+			mintChocoBananaBurger += (ingredients[j].equals("바나나")) ? 
+					ingredients[j] + "(구움) + " :  ingredients[j] + " + ";
 			
 		}
 		for(int k =0;k < sauces.length;k++) { //소스 넣기

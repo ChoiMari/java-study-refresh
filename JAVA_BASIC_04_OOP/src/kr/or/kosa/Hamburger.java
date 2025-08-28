@@ -2,7 +2,13 @@ package kr.or.kosa;
 
 public class Hamburger {
 	// 공통 - 빵, 재료, 소스, 가격
-	public static final String[] BREADS = new String[] {"빵","빵"}; // 빵 2개
+	public static final String[] BREADS; //= new String[] {"빵","빵"}; // 빵 2개
+	// static이라서 생성자 호출 이전에 초기화 되어야함
+	// static{} 안에 작성하거나 기본 초기화 시켜놓아야한다.
+	static {
+		BREADS = new String[] {"빵","빵"};
+	}
+	
 	private String[] ingredients; // 식재료 
 	private String[] sauces; // 소스
 	private int price; // 가격
@@ -25,12 +31,12 @@ public class Hamburger {
 	protected String make() {
 		System.out.println("만드는 중...");
 		String hambuger = "";
-		hambuger += BREADS[0];
+		hambuger += BREADS[0] + " + ";
 		for(int j = 0;j < ingredients.length;j++) { // 재료 넣기
 			if(ingredients[j] == null) break;
 			
-			hambuger += ingredients[j] + " + "; 
-			
+			hambuger += (ingredients[j].equals("패티")) ? 
+					ingredients[j] + "(구움) + " :  ingredients[j] + " + ";
 		}
 		for(int k =0;k < sauces.length;k++) { //소스 넣기
 			if(sauces[k] == null) break;
