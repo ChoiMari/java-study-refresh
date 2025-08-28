@@ -2,41 +2,63 @@ package kr.or.kosa;
 
 public class Hamburger {
 	// 공통 - 빵, 재료, 소스, 가격
-	private static final String[] BREADS = new String[] {"빵","빵"}; // 빵 2개
+	public static final String[] BREADS = new String[] {"빵","빵"}; // 빵 2개
 	private String[] ingredients; // 식재료 
 	private String[] sauces; // 소스
 	private int price; // 가격
+	private String name; // 햄버거 명
 	
 	// 생성자
 	public Hamburger() { // 기본값 설정
-		this(new String[5], new String[6]); // 최대 재료 5개, 소스 6개
+		this(new String[] {"패티"}, new String[] {"마요네즈"}, 2000, "햄버거"); // 최대 재료 5개, 소스 6개
 	}
 	
-	public Hamburger(String[] ingredients, String[] sauces) {	
+	public Hamburger(String[] ingredients, String[] sauces, int price, String name) {	
 		this.ingredients = ingredients;
 		this.sauces = sauces;
-	} //-> 나중에 (재료나 소스가) 늘어날 수도 있으므로 
+		this.price = price;
+		this.name = name;
+	} 
 	
 	
-	// 햄버거 만들기 - 오버라이드 강제(protected 사용)
-	protected String make(String[] ingredients, String[] sauces) {
+	// 햄버거 만들기 - 오버라이드 강제(protected 사용) - 외부에서 객체에서 접근 시 자식클래스에서 오버라이드 해야만 쓸 수 있음
+	protected String make() {
+		System.out.println("만드는 중...");
 		String hambuger = "";
-		for(int i = 0;i < BREADS.length;i++) {
-			hambuger += BREADS[i];
-			for(int j = 0;j < ingredients.length;j++) {
-				if(ingredients[j] != null) {
-					hambuger += ingredients[j];
-				}
-			}
-			for(int k =0;k < sauces.length;k++) {
-				if(sauces[k] != null) {
-					hambuger += sauces[k];
-				}
-			}
+		hambuger += BREADS[0];
+		for(int j = 0;j < ingredients.length;j++) { // 재료 넣기
+			if(ingredients[j] == null) break;
+			
+			hambuger += ingredients[j] + " + "; 
 			
 		}
-		System.out.println("햄버거가 완성되었습니다.");
+		for(int k =0;k < sauces.length;k++) { //소스 넣기
+			if(sauces[k] == null) break;
+			hambuger += sauces[k] + " + ";
+	
+		}
+		hambuger += BREADS[1];
+		System.out.println(hambuger);
+		System.out.println("햄버거가 완성되었습니다.\n----------------");
 		return hambuger;
 	}
+
+	public String[] getIngredients() {
+		return ingredients;
+	}
+
+	public String[] getSauces() {
+		return sauces;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public String getName() {
+		return name;
+	}
+	
+	
 	
 }
