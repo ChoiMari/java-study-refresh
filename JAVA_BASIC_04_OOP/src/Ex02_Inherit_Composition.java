@@ -26,6 +26,7 @@
     	2. 포함 관계 ->  has ~ a : 무엇은 무엇을 가지고 있다.
     		클래스 안에 부품으로 들어감
     		ex) 자동차는 엔진을 가지고 있다 -> 자동차 클래스 안에 엔진(부품) 클래스가 들어감
+    		부품? -> 다른 클래스 안에서 멤버 필드(타입)로 들어감
     		
     		경찰은 권총이다(X)
     		경찰은 권총을 가지고 있다(O) -> 포함관계 -> 권총이 부품으로 들어감
@@ -132,17 +133,17 @@ class Triangle extends Shape{ // 상속(삼각형은 그리다 기능을 가지�
 	
 	// 멤버 필드
 	// 삼각형은 점 3개를 가지고 있다 - 구체화 특징
-	private Point[] pointArr;
+	private Point[] points;
 	
 	// 생성자
 	public Triangle() {
 		// default값 존재
-		this(new Point[] {new Point(10,20), new Point(30,40), new Point(40, 50)});
+		points = new Point[] {new Point(1,2), new Point(3,4), new Point(5,6)};
 	}
 	
 	// 생성자 오버로딩 - 모든 필드를 초기화 하는 생성자
-	public Triangle(Point[] pointArr) {
-		this.pointArr = pointArr;
+	public Triangle(Point point1, Point point2, Point point3) {
+		points = new Point[] {point1, point2, point3};
 	}
 	
 	@Override
