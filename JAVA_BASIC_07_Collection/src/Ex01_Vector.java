@@ -42,12 +42,83 @@
  		
  	개발할 때 Vector 잘 안씀(레거시 유지보수나 학습용도)
  	지금은 ArrayList사용
+ 	
+ 	-------------------------------------
+ 	다수의 데이터를 다루는 방법
+ 		* Array 배열 -> 정적 , 고정
+ 			방의 개수가 한번 정해지면 방의 크기는 고정됨(변경 불가)
+ 		
+ 		예) int[] arr = new int[5];
+ 			int[] arr2 = new int[] {10,20,30};
+ 			int[] arr3 = {100, 200, 300};
+ 		
+ 		데이터가 추가 되면? 방 크기 못 늘림(변경 불가)
+ 			더 큰 새로운 배열 생성해서 이사 시켜야함
+ 			기존 데이터 이사시키고 + 새로운 데이터 추가해야함(개발자가 구현)
+ 			
+ 		* List 인터페이스를 구현하고 있는 ArrayList, Vector는
+ 		  1. 배열의 크기는 동적으로 확장/축소 가능하다
+ 		  	-> 진실은 **컴파일러**가 새로운 배열을 생성해서 데이터를 이동시킴
+ 		  2. 순서를 유지함(내부적으로 배열이 기반), 인덱스 사용 가능, 중복 가능
+ 		  3. 중복값 허용, 인덱스로 제어
+ 		  
+ 		  
+ 	-------------------------------------
 */
+
+import java.util.Vector;
+
 public class Ex01_Vector {
 
 	public static void main(String[] args) {
+		Vector v = new Vector(); //defulat로 호출해서 쓰면 기본 공간 10칸으로 만들어줌
+		System.out.println("초기 용량 : " + v.capacity()); // 10
+		// add()로 11개 되면 용량을 20개로 늘림(2배로), 그렇게 컴파일러가 자동으로 늘려줌 -> 동적배열
+		System.out.println("size 값 크기 개수 : " + v.size()); // 0
 		
-
+		v.add("AA"); // 순서[0]
+		v.add("BB"); // 순서[1]
+		v.add(10); // 순서[2
+		// add() 파라미터 오브젝트 타입으로 받음
+		System.out.println("size 값 크기 개수 : " + v.size()); // 3
+		
+		System.out.println(v.toString()); 
+		//[AA, BB, 10] Vector가 toString() 오버라이드함
+		
+		// Array 배열에서의 length() 방의 개수 -> index로 조회
+		
+		// 컬렉션에서 size는 저장된 값의 개수 -> 메서드로 접근 
+		//-> get() 아규먼트로 인덱스를 줌
+		for(int i = 0;i < v.size();i++) {
+			System.out.println(v.get(i));  //get() 리턴타입 : 오브젝트
+		}
+		// 왜 오브젝트로 줘?
+		// 반기를 듬.. 그래서 제네릭
+		
+		for(Object obj : v) {
+			System.out.println(obj);
+		}
+		
+		// 단점 : 같은 데이터타입으로 리턴 받고 싶음
+		// 근데 오브젝트(가장 큰 타입)을 이용해서 개발자들 불만
+		//----------------------------------------------------
+		
+		//제네릭 사용
+		Vector<String> v2 = new Vector<>(); //new Vector<String>();
+		//String만 쓰도록 강제함
+		v2.add("hello");
+		v2.add("World"); 
+		for(String str : v2){
+			System.out.println(str);
+		}
+		
+		Vector v3 = new Vector();
+		System.out.println(v3.capacity()); // 기본 10칸 배열
+		v3.add("A");v3.add("A");v3.add("A");v3.add("A");v3.add("A");v3.add("A");v3.add("A");v3.add("A");v3.add("A");v3.add("A");v3.add("A");
+		System.out.println(v3.capacity()); // 20으로 늘어남
+		// 11번째 add()하는 순간 2배로 큰 새로운 배열을 만들어서 이사시킨 후 주소값을 변경함(이전 주소는 끊어버리고)
+		
+		//-> 백터는 이젠 쓸일이 없다(학습용)
 	}
 
 }
