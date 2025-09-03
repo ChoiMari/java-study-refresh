@@ -45,7 +45,7 @@ public class Lambda {
 		// 자바의 람다식은 익명 객체를 간단히 표현한 것
 		// 함수형 인터페이스타입의 참조변수로 담아서 사용함
 		/*Itest test = new Itest(){
-			public int add(int x, int y) {
+			public int add(int x, int y) { // 접근 제어자는 좁게 못바꿈(오버라이딩)
 				return x + y;
 			}
 		};
