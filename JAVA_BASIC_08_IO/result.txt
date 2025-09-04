@@ -1,0 +1,2 @@
+word=D:\Temp\bbb.txt
+word=D:\Temp\ccc.txt
