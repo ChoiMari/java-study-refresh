@@ -17,7 +17,8 @@ public class ConnectionHelper {
 				conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","KOSA","1004");
 				break;
 			case MARIADB:
-				conn = DriverManager.getConnection("jdbc:mariadb://127.0.0.1:3306/shopdb","KOSA","1004");
+				//MariaDB는 SID개념 없음, 대신 데이터베이스이름 사용함
+				conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/testdb","root","1004");
 				break;
 			}
 		}catch(Exception e) {
