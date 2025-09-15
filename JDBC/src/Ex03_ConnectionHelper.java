@@ -10,5 +10,6 @@ public class Ex03_ConnectionHelper {
 		System.out.println(conn.isClosed()); // false 열렸다
 		ConnectionHelper.close(conn);
 		System.out.println("close : " + conn.isClosed()); //true 닫힘
+		
 	}
 }
