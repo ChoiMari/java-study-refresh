@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
  	-> 한 건 이상의 데이터
  -> select deptno, dname, loc from dept;
  */
-@Data @AllArgsConstructor @NoArgsConstructor 
+@Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class Dept {
 	private int deptno;
 	private String dname;
